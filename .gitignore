@@ -1,0 +1,38 @@
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Checkpoints and outputs
+checkpoints/
+results/
+*.pt
+*.pth
+*.bin
+
+# Data (not tracked — see data/README.md)
+data/ace2005/
+data/tac2015/
+data/embeddings/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+runs/
+wandb/
