@@ -1,0 +1,32 @@
+model:
+  vocab_size: 100000
+  n_classes: 39             # 38 TAC KBP 2015 event subtypes + Other
+  embed_dim: 300
+  pos_embed_dim: 50
+  ner_embed_dim: 50
+  lstm_hidden: 600
+  compose_dim: 300
+  n_steps: 4
+  temperature: 1.0
+  dropout: 0.5
+  max_position: 200
+  n_ner_tags: 1             # TAC 2015 does not provide entity mentions; use O-only
+
+train:
+  learning_rate: 8.0e-5
+  batch_size: 64
+  n_epochs: 60
+  patience: 10
+  max_grad_norm: 5.0
+  seed: 42
+  freeze_embeddings: true
+
+data:
+  train_file: data/tac2015/train.json
+  dev_file:   data/tac2015/train.json   # no dev split; reuse train for monitoring
+  test_file:  data/tac2015/test.json
+  word2vec_file: data/embeddings/GoogleNews-vectors-negative300.bin
+  dataset: tac2015
+
+output_dir: checkpoints/tac2015/
+device: cuda

@@ -1,0 +1,32 @@
+model:
+  vocab_size: 100000        # will be overridden by word2vec vocab size
+  n_classes: 34             # 33 ACE 2005 event subtypes + Other
+  embed_dim: 300
+  pos_embed_dim: 50
+  ner_embed_dim: 50
+  lstm_hidden: 600          # per-direction BiLSTM hidden units
+  compose_dim: 300
+  n_steps: 4                # word selection steps k
+  temperature: 1.0          # Gumbel-Softmax temperature τ
+  dropout: 0.5
+  max_position: 200
+  n_ner_tags: 15            # BIO tags for 7 ACE entity types + O
+
+train:
+  learning_rate: 8.0e-5
+  batch_size: 64
+  n_epochs: 60
+  patience: 10
+  max_grad_norm: 5.0
+  seed: 42
+  freeze_embeddings: true
+
+data:
+  train_file: data/ace2005/train.json
+  dev_file:   data/ace2005/dev.json
+  test_file:  data/ace2005/test.json
+  word2vec_file: data/embeddings/GoogleNews-vectors-negative300.bin
+  dataset: ace2005
+
+output_dir: checkpoints/ace2005/
+device: cuda
