@@ -1,8 +1,8 @@
 # eventdetection-gumbel
 
-Implementation of **"Learning to Select Important Context Words for Event Detection"** (ACL 2019).
+Implementation of **"Learning to Select Important Context Words for Event Detection"** (PAKDD 2020).
 
-[[Paper]](https://aclanthology.org/P19-1010/)
+[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC7206272/)
 
 ## Overview
 
@@ -103,37 +103,20 @@ Cross-domain F1 on ACE 2005 (Table 3), trained on `bn+nw`:
 | SELF-GAN | 69.5 | 68.9 | 63.3 | 50.0 | — |
 | **LearnToSelectED** | **70.9** | **69.8** | **64.8** | **50.2** | **59.6** |
 
-## Project Structure
-
-```
-eventdetection_gumbel/
-├── config.py     # Dataclass configs (model, training, data)
-├── data.py       # Data loading, vocabulary, batching
-├── model.py      # SentenceEncoder, LSTMCompose, GumbelWordSelector, LearnToSelectED
-├── train.py      # Training loop
-└── evaluate.py   # P/R/F1 computation
-configs/
-├── ace2005.yaml
-└── tac2015.yaml
-scripts/
-├── preprocess_ace2005.py
-├── train_ace2005.sh
-├── train_tac2015.sh
-└── evaluate.py
-```
-
 ## Citation
 
 ```bibtex
-@inproceedings{nguyen-grishman-2019-learning,
-    title = "Learning to Select Important Context Words for Event Detection",
-    author = "Nguyen, Thien Huu and Grishman, Ralph",
-    booktitle = "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
-    year = "2019",
-    address = "Florence, Italy",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/P19-1010",
-    pages = "78--88",
+@inproceedings{ngo-etal-2020-learning,
+    title     = "Learning to Select Important Context Words for Event Detection",
+    author    = "Ngo, Nghia Trung and Nguyen, Tuan Ngo and Nguyen, Thien Huu",
+    booktitle = "Advances in Knowledge Discovery and Data Mining (PAKDD 2020)",
+    series    = "Lecture Notes in Computer Science",
+    volume    = "12085",
+    pages     = "756--768",
+    year      = "2020",
+    publisher = "Springer, Cham",
+    doi       = "10.1007/978-3-030-47436-2_57",
+    url       = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206272/",
 }
 ```
 
